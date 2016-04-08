@@ -1,0 +1,37 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "EB0A8F00B39EB05B31799315D7B4839AD2E8CD4A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "2FC2E496AD6A61BF03607CAA678B71E4944DFA85" : 0,
+    "EB0A8F00B39EB05B31799315D7B4839AD2E8CD4A" : 0,
+    "BAB8A5C2DEEBCAD7F33C955BA376F766497BC0BA" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "C05B22AF-3574-4D4B-8C04-25AFC0A80E6F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "2FC2E496AD6A61BF03607CAA678B71E4944DFA85" : "msgraph-sdk-ios\/",
+    "EB0A8F00B39EB05B31799315D7B4839AD2E8CD4A" : "od-graph-sdk-ios\/",
+    "BAB8A5C2DEEBCAD7F33C955BA376F766497BC0BA" : "msgraph-sdk-ios-nxoauth2-adapter\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "iOSExplorer",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Examples\/iOSExplorer\/iOSExplorer.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/microsoftgraph\/sdk-ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2FC2E496AD6A61BF03607CAA678B71E4944DFA85"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/microsoftgraph\/msgraph-sdk-ios-nxoauth2-adapter.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BAB8A5C2DEEBCAD7F33C955BA376F766497BC0BA"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/kevklam\/graph-sdk-ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EB0A8F00B39EB05B31799315D7B4839AD2E8CD4A"
+    }
+  ]
+}

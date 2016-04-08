@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "EB0A8F00B39EB05B31799315D7B4839AD2E8CD4A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "2FC2E496AD6A61BF03607CAA678B71E4944DFA85" : 0,
+    "EB0A8F00B39EB05B31799315D7B4839AD2E8CD4A" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "610F0962-7F9C-4159-8A77-4DA55E81BF08",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "2FC2E496AD6A61BF03607CAA678B71E4944DFA85" : "msgraph-sdk-ios\/",
+    "EB0A8F00B39EB05B31799315D7B4839AD2E8CD4A" : "od-graph-sdk-ios\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "SimpleTest",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Examples\/SimpleTest\/SimpleTest.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/microsoftgraph\/msgraph-sdk-ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2FC2E496AD6A61BF03607CAA678B71E4944DFA85"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/kevklam\/graph-sdk-ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EB0A8F00B39EB05B31799315D7B4839AD2E8CD4A"
+    }
+  ]
+}
