@@ -2,7 +2,7 @@
 # platform :ios, '6.0'
 
 target 'iOSExplorer' do
-     pod 'MSGraphSDK'#, :path => '../../../msgraph-sdk-ios' 
+     pod 'MSGraphSDK', '~> 0.10'#, :path => '../../msgraph-sdk-ios' 
      pod 'MSGraphSDK-NXOAuth2Adapter'#, :path => '../../../msgraph-sdk-ios-nxoauth2-adapter'
 end
 
