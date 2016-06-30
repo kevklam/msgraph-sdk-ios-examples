@@ -33,9 +33,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [[NXOAuth2AuthenticationProvider sharedAuthProvider] setClientId:@"a48e2727-9cc2-449e-ba32-05ddebb0a16d"
-                                                           scopes:@[@"https://graph.microsoft.com/Files.ReadWrite"]];
-    [MSGraphClient setAuthenticationProvider:[NXOAuth2AuthenticationProvider sharedAuthProvider]];
+//    [[NXOAuth2AuthenticationProvider sharedAuthProvider] setClientId:@"c50e0a8e-6237-4103-88bd-e75bc733946e"
+//                                                           scopes:@[@"https://graph.microsoft.com/Files.ReadWrite"]];
+//    [NXOAuth2AuthenticationProvider sharedAuthProvider].redirectURL         = @"http://60.28.182.24:9080/appApi/OnCallBack";
+//    [NXOAuth2AuthenticationProvider sharedAuthProvider].authorizationURL    = @"https://login.chinacloudapi.cn/common/oauth2/v2.0/authorize";
+//    [NXOAuth2AuthenticationProvider sharedAuthProvider].tokenURL            = @"https://login.chinacloudapi.cn/common/oauth2/v2.0/token";
+//    
+//    
+//    [MSGraphClient setAuthenticationProvider:[NXOAuth2AuthenticationProvider sharedAuthProvider]];
     
     return YES;
 }

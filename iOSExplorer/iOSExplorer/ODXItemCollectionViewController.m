@@ -23,7 +23,12 @@
 #import "ODXTextViewController.h"
 #import "ODXActionController.h"
 #import "ODXProgressViewController.h"
-#import <MSGraphSDKNXOAuth2.h>
+
+// GALLATIN PROTOTYPE
+//#import <MSGraphSDKNXOAuth2.h>
+#import <MSGraphSDK/MSBlockAuthenticationProvider.h>
+#import <ADALiOS/ADAL.h>
+////////////////////////
 
 @interface ODXItemCollectionViewController()
 
@@ -40,6 +45,11 @@
 @property UIBarButtonItem *actions;
 
 @property ODXProgressViewController *progressController;
+
+// GALLATIN PROTOTYPE
+@property (nonatomic, strong) ADAuthenticationContext *authContext;
+@property (nonatomic, strong) NSString *accessToken;
+//////////////////////
 
 @end
 
@@ -80,26 +90,57 @@ static void *ProgressObserverContext = &ProgressObserverContext;
     [self loadChildren];
 }
 
+// GALLATIN PROTOTYPE
+- (ADAuthenticationContext *)authContext
+{
+    if (!_authContext){
+        _authContext = [ADAuthenticationContext authenticationContextWithAuthority:@"https://login.chinacloudapi.cn/common/oauth2/token" error:nil];
+    }
+    return _authContext;
+}
+/////////////////////////
+
 - (void)signInAction
 {
-    [[NXOAuth2AuthenticationProvider sharedAuthProvider] loginWithViewController:nil completion:^(NSError *error){
-        if (!error){
-            self.client = [MSGraphClient client];
-            
-            [self loadChildren];
-            dispatch_async(dispatch_get_main_queue(), ^(){
-                self.navigationItem.rightBarButtonItem = self.actions;
-            });
-        }
-        else{
-            [self showErrorAlert:error];
-        }
+    // GALLATIN PROTOTYPE
+    // Configure MSGraphClient with API endpoint and a very basic auth provider
+    id<MSAuthenticationProvider> authProvider = [MSBlockAuthenticationProvider providerWithBlock:^(NSMutableURLRequest *request, MSAuthenticationCompletion completion)
+    {
+        [request setValue:[NSString stringWithFormat:@"bearer %@", self.accessToken] forHTTPHeaderField:@"Authorization"];
+        
+        completion(request, nil /* no error */);
     }];
+    [MSGraphClient setApiEndpoint:@"https://microsoftgraph.chinacloudapi.cn/v1.0"];
+    [MSGraphClient setAuthenticationProvider:authProvider];
+    
+    [self.authContext acquireTokenWithResource:@"https://microsoftgraph.chinacloudapi.cn/"
+                                      clientId:@"f8af1a12-68e3-42b7-9660-07989c93130c"
+                                   redirectUri:[NSURL URLWithString:@"http://60.28.182.24:9080/appApi/OnCallBack"]
+                                promptBehavior:AD_PROMPT_ALWAYS
+                                        userId:@"msadmin@cjledu.partner.onmschina.cn"
+                          extraQueryParameters:nil
+                               completionBlock:^(ADAuthenticationResult *result){
+                                   if (result.status == AD_SUCCEEDED){
+                                       self.accessToken = result.accessToken;
+                                       NSLog(@"Access token retrieved: %@", result.accessToken);
+                                       
+                                       self.client = [MSGraphClient client];
+                                       
+                                       [self loadChildren];
+                                       dispatch_async(dispatch_get_main_queue(), ^(){
+                                           self.navigationItem.rightBarButtonItem = self.actions;
+                                       });
+                                   }
+                                   else {
+                                       [self showErrorAlert:result.error];
+                                   }
+                               }];
+    /////////////////////////
 }
 
 - (void)signOutAction
 {
-    [[NXOAuth2AuthenticationProvider sharedAuthProvider] logout];
+//    [[NXOAuth2AuthenticationProvider sharedAuthProvider] logout];
     
     self.items = nil;
     self.items = [NSMutableDictionary dictionary];
@@ -170,10 +211,10 @@ static void *ProgressObserverContext = &ProgressObserverContext;
                 [self loadChildrenWithRequest:nextRequest];
             }
         }
-        else if ([error isAuthenticationError]){
-            [self showErrorAlert:error];
-            [self onLoadedChildren:nil];
-        }
+//        else if ([error isAuthenticationError]){
+//            [self showErrorAlert:error];
+//            [self onLoadedChildren:nil];
+//        }
     }];
 }
 
